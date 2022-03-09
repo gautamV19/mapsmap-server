@@ -16,7 +16,7 @@ const cors = require("cors");
 app.use(express.static(path.join(__dirname, "../client/public")));
 app.use(cors());
 
-app.use("/", require('./routes'));
+app.use("/v1/api", require('./routes'));
 
 require('./config/mongoConnection');
 

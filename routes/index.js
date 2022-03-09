@@ -11,8 +11,11 @@ router.use("/tag", require("./tag"));
 router.use("/comment", require("./comment"));
 router.use("/vote", require("./vote"));
 
-router.get("/data", async (req, res) => {
-  res.status(200).send("Hi");
+router.get("/", async (req, res) => {
+  res.status(200).json({
+    message: "jay swaminarayan server is on",
+    success: true,
+  })
 });
 
 module.exports = app;
