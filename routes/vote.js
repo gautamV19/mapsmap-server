@@ -6,9 +6,9 @@ require('../config/passports')(passport);
 
 const voteController = require("../controller/vote_controller");
 
-router.put('/upvote',passport.authenticate('jwt', { session: false }), voteController.upVote);
-router.put('/downvote',passport.authenticate('jwt', { session: false }), voteController.downVote);
-router.put('/like',passport.authenticate('jwt', { session: false }), voteController.like);
-router.put('/dislike',passport.authenticate('jwt', { session: false }), voteController.dislike);
+router.post('/upvote', passport.authenticate('jwt', { session: false }), voteController.upVote);
+router.post('/downvote', passport.authenticate('jwt', { session: false }), voteController.downVote);
+router.post('/like', passport.authenticate('jwt', { session: false }), voteController.like);
+router.post('/dislike', passport.authenticate('jwt', { session: false }), voteController.dislike);
 
 module.exports = router;
