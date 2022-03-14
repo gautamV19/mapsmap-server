@@ -27,3 +27,14 @@ module.exports.create = async function (req, res) {
         },
     });
 }
+
+module.exports.getTags = async function (req, res) {
+    const tags = await Tag.find({});
+    return res.status(200).json({
+        message: "Tags",
+        success: true,
+        data: {
+            tags
+        },
+    });
+}

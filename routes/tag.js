@@ -12,5 +12,6 @@ const tagController = require('../controller/tag_controller');
 
 router.get('/', tagController.getQuestions);
 router.post('/', passport.authenticate('jwt', { session: false }), tagController.create)
+router.get('/tags', tagController.getTags)
 
 module.exports = app;

@@ -38,7 +38,7 @@ module.exports.create = async function (req, res) {
 
 module.exports.getQuestion = async function (req, res) {
     const questionId = req.query.questionId;
-    let question = await Question.findById(questionId).populate("question body vote createdBy tags", "name email title");
+    let question = await Question.findById(questionId).populate("question body vote createdBy tags comments", "name email title");
     return res.status(200).json({
         message: "This is the tag",
         success: true,

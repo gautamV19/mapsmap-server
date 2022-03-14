@@ -13,7 +13,6 @@ app.use(express.json());
 const path = require("path");
 const cors = require("cors");
 
-app.use(express.static(path.join(__dirname, "../client/public")));
 app.use(cors());
 
 app.use("/v1/api", require('./routes'));
@@ -23,9 +22,9 @@ require('./config/mongoConnection');
 
 // app.use("/api", require("./routes"))
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/public/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client/public/index.html"));
+// });
 
 const port = process.env.PORT;
 
