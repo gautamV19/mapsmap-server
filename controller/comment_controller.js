@@ -9,14 +9,15 @@ module.exports.createComment = async function (req, res) {
         const user_id = req.user.id;
         let comment = new Comment({
             comment: content,
-            user:user_id, 
+            user: user_id,
             question: question_id
         })
 
-        comment = await comment.populate("user","name email")
-        question.comments.push(comment);
-        await comment.save();
+        comment = await comment.populate("user", "name email")
+        console.log(question);
+        question.comments = [comment];
         await question.save();
+        await comment.save();
 
         return res.status(200).json({
             success: true,
@@ -36,7 +37,7 @@ module.exports.editComment = async function (req, res) {
         const comment = await Comment.findById(comment_id);
         const question = await Question.findById(question_id);
         const user_id = req.user.id;
-        
+
         if (comment.user == user_id) {
             comment.comment = content;
             question.comments.pull(comment_id);
@@ -89,10 +90,30 @@ module.exports.getComment = async function (req, res) {
             "message": "List of comments on " + question_id,
             "success": true,
             "data": {
-                comments: questionComments
+                comments: questionComments.comments
             }
         })
     } catch (err) {
+        console.log(err);
+        return res.status(500).json({
+            message: "Internal server error"
+        })
+    }
+}
+
+module.exports.getCommentById = async function (req, res) {
+    try {
+        const { comment_id } = req.body;
+        let comment = await Comment.findById(comment_id).populate("user", "name email");
+        return res.status(200).json({
+            "message": "List of comments on " + comment_id,
+            "success": true,
+            "data": {
+                comment
+            }
+        })
+    }
+    catch (err) {
         console.log(err);
         return res.status(500).json({
             message: "Internal server error"

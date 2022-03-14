@@ -11,7 +11,7 @@ const commentSchema = mongoose.Schema({
   },
   question: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Post",
+    ref: "Question",
   },
   likes: {
     type: Number,

@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const tagSchema = new mongoose.Schema({
     title: {
-        type: 'string',
+        type: String,
         required: true,
         unique: true
     },
@@ -11,7 +11,7 @@ const tagSchema = new mongoose.Schema({
         ref: "Question"
     }],
     id: {
-        type: 'string',
+        type: String,
         required: true,
         unique: true
     }
