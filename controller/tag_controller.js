@@ -1,5 +1,5 @@
 const Tag = require('../models/tag')
-
+const crypto = require("crypto");
 module.exports.getQuestions = async function (req, res) {
     const tagId = req.query.tagId;
     console.log(tagId);
@@ -16,7 +16,9 @@ module.exports.getQuestions = async function (req, res) {
 
 module.exports.create = async function (req, res) {
     const { title } = req.body;
-    const tag = await Tag.create({ title });
+    const id = crypto.randomBytes(20).toString('hex');
+    const link = `/tags/${id}`
+    const tag = await Tag.create({ title, id, link });
     return res.status(200).json({
         message: "Tag created successfully",
         success: true,

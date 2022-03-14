@@ -9,7 +9,12 @@ const tagSchema = new mongoose.Schema({
     questions: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Question"
-    }]
+    }],
+    id: {
+        type: 'string',
+        required: true,
+        unique: true
+    }
 }, { timestamps: true })
 
 const Tag = mongoose.model('Tag', tagSchema)
