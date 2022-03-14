@@ -14,7 +14,12 @@ module.exports.createComment = async function (req, res) {
         })
 
         comment = await comment.populate("user", "name email")
-        question.comments = [comment];
+        if (question.comments) {
+            question.comments.push(comment)
+        }
+        else {
+            question.comments = [comment];
+        }
         await question.save();
         await comment.save();
 
