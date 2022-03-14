@@ -108,7 +108,7 @@ module.exports.getCommentById = async function (req, res) {
             "message": "List of comments on " + comment_id,
             "success": true,
             "data": {
-                comment
+                comment: comment
             }
         })
     }
