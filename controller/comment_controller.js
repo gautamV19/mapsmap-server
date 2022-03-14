@@ -102,7 +102,7 @@ module.exports.getComment = async function (req, res) {
 
 module.exports.getCommentById = async function (req, res) {
     try {
-        const { comment_id } = req.body;
+        const { comment_id } = req.query;
         let comment = await Comment.findById(comment_id).populate("user", "name email");
         return res.status(200).json({
             "message": "List of comments on " + comment_id,
