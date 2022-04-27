@@ -18,7 +18,7 @@ API Documentation: https://documenter.getpostman.com/view/18447699/UVsFxTBF
 ## Authors
 
 - [Gautam Vaja](https://www.github.com/gautamV19)
-- [Krutik Malani](https://www.github.com/k)
+- [Krutik Malani](https://www.github.com/krutik48)
 
 ## Feedback
 
