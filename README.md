@@ -12,10 +12,10 @@ Others will use the app to incentivize desirable trajectories through the proble
 API Documentation: https://documenter.getpostman.com/view/18447699/UVsFxTBF
 ## Tech Stack
 
-**Server:** Node, Express
+**Server:** Node, Express, JWT, Postman
 
 
-## Authors
+## Contributors
 
 - [Gautam Vaja](https://www.github.com/gautamV19)
 - [Krutik Malani](https://www.github.com/krutik48)
