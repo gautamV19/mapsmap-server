@@ -19,6 +19,7 @@ API Documentation: https://documenter.getpostman.com/view/18447699/UVsFxTBF
 
 - [Gautam Vaja](https://www.github.com/gautamV19)
 - [Krutik Malani](https://www.github.com/krutik48)
+- [Anirudh Varna](https://www.github.com/RubyGlade)
 
 ## Feedback
 
