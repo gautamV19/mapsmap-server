@@ -9,6 +9,8 @@ Individuals and communities will use it to coordinate on their local problems, s
 
 Others will use the app to incentivize desirable trajectories through the problem spaces, as described in Trent McConaghy’s Starships & Tokens, or Balaji Srinivasan's Tech Tree.
 
+This is API for the main Project
+
 API Documentation: https://documenter.getpostman.com/view/18447699/UVsFxTBF
 ## Tech Stack
 
